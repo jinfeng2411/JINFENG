@@ -123,6 +123,33 @@ test_logging/fast:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/build
 .PHONY : test_logging/fast
 
+src/LogFile.o: src/LogFile.cc.o
+
+.PHONY : src/LogFile.o
+
+# target to build an object file
+src/LogFile.cc.o:
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/LogFile.cc.o
+.PHONY : src/LogFile.cc.o
+
+src/LogFile.i: src/LogFile.cc.i
+
+.PHONY : src/LogFile.i
+
+# target to preprocess a source file
+src/LogFile.cc.i:
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/LogFile.cc.i
+.PHONY : src/LogFile.cc.i
+
+src/LogFile.s: src/LogFile.cc.s
+
+.PHONY : src/LogFile.s
+
+# target to generate assembly for a file
+src/LogFile.cc.s:
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/LogFile.cc.s
+.PHONY : src/LogFile.cc.s
+
 src/Logging.o: src/Logging.cc.o
 
 .PHONY : src/Logging.o
@@ -213,6 +240,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test_logging"
 	@echo "... edit_cache"
+	@echo "... src/LogFile.o"
+	@echo "... src/LogFile.i"
+	@echo "... src/LogFile.s"
 	@echo "... src/Logging.o"
 	@echo "... src/Logging.i"
 	@echo "... src/Logging.s"

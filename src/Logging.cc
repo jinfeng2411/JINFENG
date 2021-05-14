@@ -58,7 +58,8 @@ OutputFunc Logger::outputFunc_ = defaultOutput;
 FlushFunc Logger::flushFunc_ = defaultFlush;
 
 Logger::Logger(const LogLevel::Level& level, const char* fileName, const uint64_t& line)
-	:fileName_(fileName),
+	:level_(level),
+	fileName_(fileName),
 	line_(line)
 {
 	stream_<<Timer::getLogTime()<<" ";
@@ -73,7 +74,8 @@ Logger::~Logger()
 	stream_<<line_;
 	stream_<<"\n";
 	outputFunc_(stream_);
-	flushFunc_();
+	if(level_==LogLevel::FATAL)
+		flushFunc_();
 }
 
 void Logger::setOutputFunc(const OutputFunc& func)
@@ -83,7 +85,7 @@ void Logger::setOutputFunc(const OutputFunc& func)
 
 void Logger::setFlushFunc(const FlushFunc& func)
 {
-        flushFunc_ = func;
+       	flushFunc_ = func;
 }
 
 

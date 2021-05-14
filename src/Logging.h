@@ -52,9 +52,9 @@ public:
 
 	std::stringstream& stream() {return stream_;}
 
-	void setOutputFunc(const OutputFunc& func);
+	static void setOutputFunc(const OutputFunc& func);
 
-	void setFlushFunc(const FlushFunc& func);
+	static void setFlushFunc(const FlushFunc& func);
 
 private:
 	const char* fileName_;
@@ -62,6 +62,7 @@ private:
 	std::stringstream stream_;
 	static OutputFunc outputFunc_;
 	static FlushFunc flushFunc_;
+	LogLevel::Level level_;
 };
 
 };
