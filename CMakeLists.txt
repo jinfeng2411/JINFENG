@@ -12,9 +12,11 @@ find_library(PTHREAD pthread)
 
 add_executable(test_logging tests/test_logging.cc ${SOURCE})
 add_executable(test_thread tests/test_thread.cc ${SOURCE})
+add_executable(test_threadPool tests/test_threadPool.cc ${SOURCE})
 
 target_link_libraries(test_logging ${PTHREAD})
 target_link_libraries(test_thread ${PTHREAD})
+target_link_libraries(test_threadPool ${PTHREAD})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 

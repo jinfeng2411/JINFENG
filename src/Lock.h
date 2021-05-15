@@ -30,6 +30,11 @@ public:
 		assert(ret==0);
 	}
 
+	pthread_mutex_t& getPthreadMutex()
+	{
+		return mutex_;
+	}
+
 private:
 	pthread_mutex_t mutex_;
 };
