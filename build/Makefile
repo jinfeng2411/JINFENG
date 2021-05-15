@@ -123,6 +123,19 @@ test_logging/fast:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/build
 .PHONY : test_logging/fast
 
+#=============================================================================
+# Target rules for targets named test_thread
+
+# Build rule for target.
+test_thread: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_thread
+.PHONY : test_thread
+
+# fast build rule for target.
+test_thread/fast:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
+.PHONY : test_thread/fast
+
 src/LogFile.o: src/LogFile.cc.o
 
 .PHONY : src/LogFile.o
@@ -130,6 +143,7 @@ src/LogFile.o: src/LogFile.cc.o
 # target to build an object file
 src/LogFile.cc.o:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/LogFile.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/LogFile.cc.o
 .PHONY : src/LogFile.cc.o
 
 src/LogFile.i: src/LogFile.cc.i
@@ -139,6 +153,7 @@ src/LogFile.i: src/LogFile.cc.i
 # target to preprocess a source file
 src/LogFile.cc.i:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/LogFile.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/LogFile.cc.i
 .PHONY : src/LogFile.cc.i
 
 src/LogFile.s: src/LogFile.cc.s
@@ -148,6 +163,7 @@ src/LogFile.s: src/LogFile.cc.s
 # target to generate assembly for a file
 src/LogFile.cc.s:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/LogFile.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/LogFile.cc.s
 .PHONY : src/LogFile.cc.s
 
 src/Logging.o: src/Logging.cc.o
@@ -157,6 +173,7 @@ src/Logging.o: src/Logging.cc.o
 # target to build an object file
 src/Logging.cc.o:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Logging.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Logging.cc.o
 .PHONY : src/Logging.cc.o
 
 src/Logging.i: src/Logging.cc.i
@@ -166,6 +183,7 @@ src/Logging.i: src/Logging.cc.i
 # target to preprocess a source file
 src/Logging.cc.i:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Logging.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Logging.cc.i
 .PHONY : src/Logging.cc.i
 
 src/Logging.s: src/Logging.cc.s
@@ -175,6 +193,7 @@ src/Logging.s: src/Logging.cc.s
 # target to generate assembly for a file
 src/Logging.cc.s:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Logging.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Logging.cc.s
 .PHONY : src/Logging.cc.s
 
 src/utils.o: src/utils.cc.o
@@ -184,6 +203,7 @@ src/utils.o: src/utils.cc.o
 # target to build an object file
 src/utils.cc.o:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/utils.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/utils.cc.o
 .PHONY : src/utils.cc.o
 
 src/utils.i: src/utils.cc.i
@@ -193,6 +213,7 @@ src/utils.i: src/utils.cc.i
 # target to preprocess a source file
 src/utils.cc.i:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/utils.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/utils.cc.i
 .PHONY : src/utils.cc.i
 
 src/utils.s: src/utils.cc.s
@@ -202,6 +223,7 @@ src/utils.s: src/utils.cc.s
 # target to generate assembly for a file
 src/utils.cc.s:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/utils.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/utils.cc.s
 .PHONY : src/utils.cc.s
 
 tests/test_logging.o: tests/test_logging.cc.o
@@ -231,6 +253,33 @@ tests/test_logging.cc.s:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/tests/test_logging.cc.s
 .PHONY : tests/test_logging.cc.s
 
+tests/test_thread.o: tests/test_thread.cc.o
+
+.PHONY : tests/test_thread.o
+
+# target to build an object file
+tests/test_thread.cc.o:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.o
+.PHONY : tests/test_thread.cc.o
+
+tests/test_thread.i: tests/test_thread.cc.i
+
+.PHONY : tests/test_thread.i
+
+# target to preprocess a source file
+tests/test_thread.cc.i:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.i
+.PHONY : tests/test_thread.cc.i
+
+tests/test_thread.s: tests/test_thread.cc.s
+
+.PHONY : tests/test_thread.s
+
+# target to generate assembly for a file
+tests/test_thread.cc.s:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.s
+.PHONY : tests/test_thread.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -238,8 +287,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... test_logging"
 	@echo "... edit_cache"
+	@echo "... test_logging"
+	@echo "... test_thread"
 	@echo "... src/LogFile.o"
 	@echo "... src/LogFile.i"
 	@echo "... src/LogFile.s"
@@ -252,6 +302,9 @@ help:
 	@echo "... tests/test_logging.o"
 	@echo "... tests/test_logging.i"
 	@echo "... tests/test_logging.s"
+	@echo "... tests/test_thread.o"
+	@echo "... tests/test_thread.i"
+	@echo "... tests/test_thread.s"
 .PHONY : help
 
 

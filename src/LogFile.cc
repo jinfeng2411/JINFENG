@@ -1,5 +1,6 @@
 #include "LogFile.h"
 #include <iomanip>
+#include <sstream>
 
 namespace JINFENG{
 
@@ -13,7 +14,8 @@ LogFile::LogFile(const std::string& baseName,
 	flushInterval_(flushInterval),
 	lastRoll_((time(NULL))/kRollPerSeconds_),
 	lastFlush_(time(NULL)),
-	written_(0)
+	written_(0),
+	mutex_()
 {
 	assert(baseName_.find('/')==std::string::npos);
 	std::string filename = getLogFileName();
@@ -31,7 +33,7 @@ void LogFile::append(const char* data, int len)
 {
 	if(threadSafe_)
 	{
-		//Mutex
+		MutexLockGuard lock(mutex_);
 		append_unlock(data, len);
 	}
 	else
@@ -44,7 +46,7 @@ void LogFile::flush()
 {
 	if(threadSafe_)
 	{
-		//Mutex
+		MutexLockGuard lock(mutex_);
 		int ret = fflush(fp_);
 		assert(ret==0);
 	}

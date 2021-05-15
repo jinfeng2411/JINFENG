@@ -4,6 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <assert.h>
+#include "Lock.h"
 namespace JINFENG{
 
 class LogFile{
@@ -17,7 +18,7 @@ public:
 	void append(const char* data, int len);
 
 	void flush();
-privat:
+private:
 	void append_unlock(const char* data, int len);
 
 	void rollFile();
@@ -33,6 +34,7 @@ private:
 	time_t lastFlush_;
 	FILE* fp_;
 	size_t written_; 
+	MutexLock mutex_;
 	const static int kRollPerSeconds_ = 60*60*24;
 };
 
