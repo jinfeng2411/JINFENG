@@ -111,17 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_threadPool
+# Target rules for targets named test_thread
 
 # Build rule for target.
-test_threadPool: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_threadPool
-.PHONY : test_threadPool
+test_thread: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_thread
+.PHONY : test_thread
 
 # fast build rule for target.
-test_threadPool/fast:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/build
-.PHONY : test_threadPool/fast
+test_thread/fast:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
+.PHONY : test_thread/fast
+
+#=============================================================================
+# Target rules for targets named test_buffer
+
+# Build rule for target.
+test_buffer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_buffer
+.PHONY : test_buffer
+
+# fast build rule for target.
+test_buffer/fast:
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/build
+.PHONY : test_buffer/fast
 
 #=============================================================================
 # Target rules for targets named test_logging
@@ -150,17 +163,114 @@ test_eventloop/fast:
 .PHONY : test_eventloop/fast
 
 #=============================================================================
-# Target rules for targets named test_thread
+# Target rules for targets named test_threadPool
 
 # Build rule for target.
-test_thread: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_thread
-.PHONY : test_thread
+test_threadPool: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_threadPool
+.PHONY : test_threadPool
 
 # fast build rule for target.
-test_thread/fast:
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-.PHONY : test_thread/fast
+test_threadPool/fast:
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/build
+.PHONY : test_threadPool/fast
+
+#=============================================================================
+# Target rules for targets named test_tcpServer
+
+# Build rule for target.
+test_tcpServer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_tcpServer
+.PHONY : test_tcpServer
+
+# fast build rule for target.
+test_tcpServer/fast:
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/build
+.PHONY : test_tcpServer/fast
+
+src/Acceptor.o: src/Acceptor.cc.o
+
+.PHONY : src/Acceptor.o
+
+# target to build an object file
+src/Acceptor.cc.o:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Acceptor.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Acceptor.cc.o
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Acceptor.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Acceptor.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Acceptor.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Acceptor.cc.o
+.PHONY : src/Acceptor.cc.o
+
+src/Acceptor.i: src/Acceptor.cc.i
+
+.PHONY : src/Acceptor.i
+
+# target to preprocess a source file
+src/Acceptor.cc.i:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Acceptor.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Acceptor.cc.i
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Acceptor.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Acceptor.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Acceptor.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Acceptor.cc.i
+.PHONY : src/Acceptor.cc.i
+
+src/Acceptor.s: src/Acceptor.cc.s
+
+.PHONY : src/Acceptor.s
+
+# target to generate assembly for a file
+src/Acceptor.cc.s:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Acceptor.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Acceptor.cc.s
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Acceptor.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Acceptor.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Acceptor.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Acceptor.cc.s
+.PHONY : src/Acceptor.cc.s
+
+src/Buffer.o: src/Buffer.cc.o
+
+.PHONY : src/Buffer.o
+
+# target to build an object file
+src/Buffer.cc.o:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Buffer.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Buffer.cc.o
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Buffer.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Buffer.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Buffer.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Buffer.cc.o
+.PHONY : src/Buffer.cc.o
+
+src/Buffer.i: src/Buffer.cc.i
+
+.PHONY : src/Buffer.i
+
+# target to preprocess a source file
+src/Buffer.cc.i:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Buffer.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Buffer.cc.i
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Buffer.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Buffer.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Buffer.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Buffer.cc.i
+.PHONY : src/Buffer.cc.i
+
+src/Buffer.s: src/Buffer.cc.s
+
+.PHONY : src/Buffer.s
+
+# target to generate assembly for a file
+src/Buffer.cc.s:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Buffer.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Buffer.cc.s
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Buffer.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Buffer.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Buffer.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Buffer.cc.s
+.PHONY : src/Buffer.cc.s
 
 src/Channel.o: src/Channel.cc.o
 
@@ -168,10 +278,12 @@ src/Channel.o: src/Channel.cc.o
 
 # target to build an object file
 src/Channel.cc.o:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Channel.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Channel.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Channel.cc.o
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Channel.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Channel.cc.o
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Channel.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Channel.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Channel.cc.o
 .PHONY : src/Channel.cc.o
 
 src/Channel.i: src/Channel.cc.i
@@ -180,10 +292,12 @@ src/Channel.i: src/Channel.cc.i
 
 # target to preprocess a source file
 src/Channel.cc.i:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Channel.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Channel.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Channel.cc.i
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Channel.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Channel.cc.i
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Channel.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Channel.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Channel.cc.i
 .PHONY : src/Channel.cc.i
 
 src/Channel.s: src/Channel.cc.s
@@ -192,10 +306,12 @@ src/Channel.s: src/Channel.cc.s
 
 # target to generate assembly for a file
 src/Channel.cc.s:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Channel.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Channel.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Channel.cc.s
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Channel.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Channel.cc.s
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Channel.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Channel.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Channel.cc.s
 .PHONY : src/Channel.cc.s
 
 src/EventLoop.o: src/EventLoop.cc.o
@@ -204,10 +320,12 @@ src/EventLoop.o: src/EventLoop.cc.o
 
 # target to build an object file
 src/EventLoop.cc.o:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/EventLoop.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/EventLoop.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/EventLoop.cc.o
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/EventLoop.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/EventLoop.cc.o
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/EventLoop.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/EventLoop.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/EventLoop.cc.o
 .PHONY : src/EventLoop.cc.o
 
 src/EventLoop.i: src/EventLoop.cc.i
@@ -216,10 +334,12 @@ src/EventLoop.i: src/EventLoop.cc.i
 
 # target to preprocess a source file
 src/EventLoop.cc.i:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/EventLoop.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/EventLoop.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/EventLoop.cc.i
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/EventLoop.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/EventLoop.cc.i
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/EventLoop.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/EventLoop.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/EventLoop.cc.i
 .PHONY : src/EventLoop.cc.i
 
 src/EventLoop.s: src/EventLoop.cc.s
@@ -228,10 +348,12 @@ src/EventLoop.s: src/EventLoop.cc.s
 
 # target to generate assembly for a file
 src/EventLoop.cc.s:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/EventLoop.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/EventLoop.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/EventLoop.cc.s
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/EventLoop.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/EventLoop.cc.s
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/EventLoop.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/EventLoop.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/EventLoop.cc.s
 .PHONY : src/EventLoop.cc.s
 
 src/LogFile.o: src/LogFile.cc.o
@@ -240,10 +362,12 @@ src/LogFile.o: src/LogFile.cc.o
 
 # target to build an object file
 src/LogFile.cc.o:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/LogFile.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/LogFile.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/LogFile.cc.o
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/LogFile.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/LogFile.cc.o
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/LogFile.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/LogFile.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/LogFile.cc.o
 .PHONY : src/LogFile.cc.o
 
 src/LogFile.i: src/LogFile.cc.i
@@ -252,10 +376,12 @@ src/LogFile.i: src/LogFile.cc.i
 
 # target to preprocess a source file
 src/LogFile.cc.i:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/LogFile.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/LogFile.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/LogFile.cc.i
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/LogFile.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/LogFile.cc.i
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/LogFile.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/LogFile.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/LogFile.cc.i
 .PHONY : src/LogFile.cc.i
 
 src/LogFile.s: src/LogFile.cc.s
@@ -264,10 +390,12 @@ src/LogFile.s: src/LogFile.cc.s
 
 # target to generate assembly for a file
 src/LogFile.cc.s:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/LogFile.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/LogFile.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/LogFile.cc.s
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/LogFile.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/LogFile.cc.s
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/LogFile.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/LogFile.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/LogFile.cc.s
 .PHONY : src/LogFile.cc.s
 
 src/Logging.o: src/Logging.cc.o
@@ -276,10 +404,12 @@ src/Logging.o: src/Logging.cc.o
 
 # target to build an object file
 src/Logging.cc.o:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Logging.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Logging.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Logging.cc.o
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Logging.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Logging.cc.o
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Logging.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Logging.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Logging.cc.o
 .PHONY : src/Logging.cc.o
 
 src/Logging.i: src/Logging.cc.i
@@ -288,10 +418,12 @@ src/Logging.i: src/Logging.cc.i
 
 # target to preprocess a source file
 src/Logging.cc.i:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Logging.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Logging.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Logging.cc.i
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Logging.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Logging.cc.i
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Logging.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Logging.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Logging.cc.i
 .PHONY : src/Logging.cc.i
 
 src/Logging.s: src/Logging.cc.s
@@ -300,10 +432,12 @@ src/Logging.s: src/Logging.cc.s
 
 # target to generate assembly for a file
 src/Logging.cc.s:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Logging.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Logging.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Logging.cc.s
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Logging.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Logging.cc.s
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Logging.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Logging.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Logging.cc.s
 .PHONY : src/Logging.cc.s
 
 src/Poller.o: src/Poller.cc.o
@@ -312,10 +446,12 @@ src/Poller.o: src/Poller.cc.o
 
 # target to build an object file
 src/Poller.cc.o:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Poller.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Poller.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Poller.cc.o
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Poller.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Poller.cc.o
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Poller.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Poller.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Poller.cc.o
 .PHONY : src/Poller.cc.o
 
 src/Poller.i: src/Poller.cc.i
@@ -324,10 +460,12 @@ src/Poller.i: src/Poller.cc.i
 
 # target to preprocess a source file
 src/Poller.cc.i:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Poller.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Poller.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Poller.cc.i
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Poller.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Poller.cc.i
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Poller.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Poller.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Poller.cc.i
 .PHONY : src/Poller.cc.i
 
 src/Poller.s: src/Poller.cc.s
@@ -336,11 +474,97 @@ src/Poller.s: src/Poller.cc.s
 
 # target to generate assembly for a file
 src/Poller.cc.s:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Poller.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Poller.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/Poller.cc.s
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/Poller.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/Poller.cc.s
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/Poller.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/Poller.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/Poller.cc.s
 .PHONY : src/Poller.cc.s
+
+src/TcpConnection.o: src/TcpConnection.cc.o
+
+.PHONY : src/TcpConnection.o
+
+# target to build an object file
+src/TcpConnection.cc.o:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TcpConnection.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/TcpConnection.cc.o
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/TcpConnection.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/TcpConnection.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TcpConnection.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/TcpConnection.cc.o
+.PHONY : src/TcpConnection.cc.o
+
+src/TcpConnection.i: src/TcpConnection.cc.i
+
+.PHONY : src/TcpConnection.i
+
+# target to preprocess a source file
+src/TcpConnection.cc.i:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TcpConnection.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/TcpConnection.cc.i
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/TcpConnection.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/TcpConnection.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TcpConnection.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/TcpConnection.cc.i
+.PHONY : src/TcpConnection.cc.i
+
+src/TcpConnection.s: src/TcpConnection.cc.s
+
+.PHONY : src/TcpConnection.s
+
+# target to generate assembly for a file
+src/TcpConnection.cc.s:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TcpConnection.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/TcpConnection.cc.s
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/TcpConnection.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/TcpConnection.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TcpConnection.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/TcpConnection.cc.s
+.PHONY : src/TcpConnection.cc.s
+
+src/TcpServer.o: src/TcpServer.cc.o
+
+.PHONY : src/TcpServer.o
+
+# target to build an object file
+src/TcpServer.cc.o:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TcpServer.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/TcpServer.cc.o
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/TcpServer.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/TcpServer.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TcpServer.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/TcpServer.cc.o
+.PHONY : src/TcpServer.cc.o
+
+src/TcpServer.i: src/TcpServer.cc.i
+
+.PHONY : src/TcpServer.i
+
+# target to preprocess a source file
+src/TcpServer.cc.i:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TcpServer.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/TcpServer.cc.i
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/TcpServer.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/TcpServer.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TcpServer.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/TcpServer.cc.i
+.PHONY : src/TcpServer.cc.i
+
+src/TcpServer.s: src/TcpServer.cc.s
+
+.PHONY : src/TcpServer.s
+
+# target to generate assembly for a file
+src/TcpServer.cc.s:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TcpServer.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/TcpServer.cc.s
+	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/TcpServer.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/TcpServer.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TcpServer.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/TcpServer.cc.s
+.PHONY : src/TcpServer.cc.s
 
 src/ThreadPool.o: src/ThreadPool.cc.o
 
@@ -348,10 +572,12 @@ src/ThreadPool.o: src/ThreadPool.cc.o
 
 # target to build an object file
 src/ThreadPool.cc.o:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/ThreadPool.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/ThreadPool.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/ThreadPool.cc.o
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/ThreadPool.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/ThreadPool.cc.o
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/ThreadPool.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/ThreadPool.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/ThreadPool.cc.o
 .PHONY : src/ThreadPool.cc.o
 
 src/ThreadPool.i: src/ThreadPool.cc.i
@@ -360,10 +586,12 @@ src/ThreadPool.i: src/ThreadPool.cc.i
 
 # target to preprocess a source file
 src/ThreadPool.cc.i:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/ThreadPool.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/ThreadPool.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/ThreadPool.cc.i
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/ThreadPool.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/ThreadPool.cc.i
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/ThreadPool.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/ThreadPool.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/ThreadPool.cc.i
 .PHONY : src/ThreadPool.cc.i
 
 src/ThreadPool.s: src/ThreadPool.cc.s
@@ -372,10 +600,12 @@ src/ThreadPool.s: src/ThreadPool.cc.s
 
 # target to generate assembly for a file
 src/ThreadPool.cc.s:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/ThreadPool.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/ThreadPool.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/ThreadPool.cc.s
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/ThreadPool.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/ThreadPool.cc.s
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/ThreadPool.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/ThreadPool.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/ThreadPool.cc.s
 .PHONY : src/ThreadPool.cc.s
 
 src/TimerQueue.o: src/TimerQueue.cc.o
@@ -384,10 +614,12 @@ src/TimerQueue.o: src/TimerQueue.cc.o
 
 # target to build an object file
 src/TimerQueue.cc.o:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TimerQueue.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TimerQueue.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/TimerQueue.cc.o
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/TimerQueue.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/TimerQueue.cc.o
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TimerQueue.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TimerQueue.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/TimerQueue.cc.o
 .PHONY : src/TimerQueue.cc.o
 
 src/TimerQueue.i: src/TimerQueue.cc.i
@@ -396,10 +628,12 @@ src/TimerQueue.i: src/TimerQueue.cc.i
 
 # target to preprocess a source file
 src/TimerQueue.cc.i:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TimerQueue.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TimerQueue.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/TimerQueue.cc.i
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/TimerQueue.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/TimerQueue.cc.i
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TimerQueue.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TimerQueue.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/TimerQueue.cc.i
 .PHONY : src/TimerQueue.cc.i
 
 src/TimerQueue.s: src/TimerQueue.cc.s
@@ -408,10 +642,12 @@ src/TimerQueue.s: src/TimerQueue.cc.s
 
 # target to generate assembly for a file
 src/TimerQueue.cc.s:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TimerQueue.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TimerQueue.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/TimerQueue.cc.s
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/TimerQueue.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/TimerQueue.cc.s
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/TimerQueue.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/TimerQueue.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/TimerQueue.cc.s
 .PHONY : src/TimerQueue.cc.s
 
 src/utils.o: src/utils.cc.o
@@ -420,10 +656,12 @@ src/utils.o: src/utils.cc.o
 
 # target to build an object file
 src/utils.cc.o:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/utils.cc.o
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/utils.cc.o
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/utils.cc.o
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/utils.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/utils.cc.o
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/utils.cc.o
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/utils.cc.o
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/utils.cc.o
 .PHONY : src/utils.cc.o
 
 src/utils.i: src/utils.cc.i
@@ -432,10 +670,12 @@ src/utils.i: src/utils.cc.i
 
 # target to preprocess a source file
 src/utils.cc.i:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/utils.cc.i
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/utils.cc.i
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/utils.cc.i
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/utils.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/utils.cc.i
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/utils.cc.i
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/utils.cc.i
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/utils.cc.i
 .PHONY : src/utils.cc.i
 
 src/utils.s: src/utils.cc.s
@@ -444,11 +684,40 @@ src/utils.s: src/utils.cc.s
 
 # target to generate assembly for a file
 src/utils.cc.s:
-	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/utils.cc.s
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/utils.cc.s
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/src/utils.cc.s
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/src/utils.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/src/utils.cc.s
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/src/utils.cc.s
+	$(MAKE) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/utils.cc.s
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/src/utils.cc.s
 .PHONY : src/utils.cc.s
+
+tests/test_buffer.o: tests/test_buffer.cc.o
+
+.PHONY : tests/test_buffer.o
+
+# target to build an object file
+tests/test_buffer.cc.o:
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/tests/test_buffer.cc.o
+.PHONY : tests/test_buffer.cc.o
+
+tests/test_buffer.i: tests/test_buffer.cc.i
+
+.PHONY : tests/test_buffer.i
+
+# target to preprocess a source file
+tests/test_buffer.cc.i:
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/tests/test_buffer.cc.i
+.PHONY : tests/test_buffer.cc.i
+
+tests/test_buffer.s: tests/test_buffer.cc.s
+
+.PHONY : tests/test_buffer.s
+
+# target to generate assembly for a file
+tests/test_buffer.cc.s:
+	$(MAKE) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/tests/test_buffer.cc.s
+.PHONY : tests/test_buffer.cc.s
 
 tests/test_eventloop.o: tests/test_eventloop.cc.o
 
@@ -503,6 +772,33 @@ tests/test_logging.s: tests/test_logging.cc.s
 tests/test_logging.cc.s:
 	$(MAKE) -f CMakeFiles/test_logging.dir/build.make CMakeFiles/test_logging.dir/tests/test_logging.cc.s
 .PHONY : tests/test_logging.cc.s
+
+tests/test_tcpServer.o: tests/test_tcpServer.cc.o
+
+.PHONY : tests/test_tcpServer.o
+
+# target to build an object file
+tests/test_tcpServer.cc.o:
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/tests/test_tcpServer.cc.o
+.PHONY : tests/test_tcpServer.cc.o
+
+tests/test_tcpServer.i: tests/test_tcpServer.cc.i
+
+.PHONY : tests/test_tcpServer.i
+
+# target to preprocess a source file
+tests/test_tcpServer.cc.i:
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/tests/test_tcpServer.cc.i
+.PHONY : tests/test_tcpServer.cc.i
+
+tests/test_tcpServer.s: tests/test_tcpServer.cc.s
+
+.PHONY : tests/test_tcpServer.s
+
+# target to generate assembly for a file
+tests/test_tcpServer.cc.s:
+	$(MAKE) -f CMakeFiles/test_tcpServer.dir/build.make CMakeFiles/test_tcpServer.dir/tests/test_tcpServer.cc.s
+.PHONY : tests/test_tcpServer.cc.s
 
 tests/test_thread.o: tests/test_thread.cc.o
 
@@ -566,10 +862,18 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test_threadPool"
+	@echo "... test_thread"
+	@echo "... test_buffer"
 	@echo "... test_logging"
 	@echo "... test_eventloop"
-	@echo "... test_thread"
+	@echo "... test_threadPool"
+	@echo "... test_tcpServer"
+	@echo "... src/Acceptor.o"
+	@echo "... src/Acceptor.i"
+	@echo "... src/Acceptor.s"
+	@echo "... src/Buffer.o"
+	@echo "... src/Buffer.i"
+	@echo "... src/Buffer.s"
 	@echo "... src/Channel.o"
 	@echo "... src/Channel.i"
 	@echo "... src/Channel.s"
@@ -585,6 +889,12 @@ help:
 	@echo "... src/Poller.o"
 	@echo "... src/Poller.i"
 	@echo "... src/Poller.s"
+	@echo "... src/TcpConnection.o"
+	@echo "... src/TcpConnection.i"
+	@echo "... src/TcpConnection.s"
+	@echo "... src/TcpServer.o"
+	@echo "... src/TcpServer.i"
+	@echo "... src/TcpServer.s"
 	@echo "... src/ThreadPool.o"
 	@echo "... src/ThreadPool.i"
 	@echo "... src/ThreadPool.s"
@@ -594,12 +904,18 @@ help:
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"
+	@echo "... tests/test_buffer.o"
+	@echo "... tests/test_buffer.i"
+	@echo "... tests/test_buffer.s"
 	@echo "... tests/test_eventloop.o"
 	@echo "... tests/test_eventloop.i"
 	@echo "... tests/test_eventloop.s"
 	@echo "... tests/test_logging.o"
 	@echo "... tests/test_logging.i"
 	@echo "... tests/test_logging.s"
+	@echo "... tests/test_tcpServer.o"
+	@echo "... tests/test_tcpServer.i"
+	@echo "... tests/test_tcpServer.s"
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"
