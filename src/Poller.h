@@ -1,15 +1,16 @@
 #pragma once
 
-#include<sys/epoll.h>
-#include<unordered_set>
+#include <sys/epoll.h>
+#include <unordered_set>
 
 namespace JINFENG{
 
-class Channel;
 class EventLoop;
 //采用 epoll 的 ET 模式
 class EPoller{
 public:
+	typedef Channel::ptr ChannelPtr;
+
 	EPoller(EventLoop* loop);
 	~EPoller();
 

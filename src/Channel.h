@@ -8,6 +8,7 @@ namespace JINFENG{
 class EventLoop;
 class Channel{
 public:
+	typedef std::shared_ptr<Channel> ptr;
 	typedef std::function<void()> ReadCallback;
 	typedef std::function<void()> WriteCallback;
 	typedef std::function<void()> CloseCallback;
@@ -17,26 +18,32 @@ public:
 	int fd() {return fd_;}
 
 	//注册监听事件
-	void enableReading()
+	void enableReading(bool on)
 	{
-		events_ |= EPOLLIN;
+		if(on)
+			events_ |= EPOLLIN;
+		else
+			events_ &= (~EPOLLIN);
 		loop_->updateChannel(this);
 	}
 
-	void enableWriting()
+	void enableWriting(bool on)
 	{
-		events_ |= EPOLLOUT;
+		if(on)
+			events_ |= EPOLLOUT;
+		else
+			events_ &= (~EPOLLOUT);
 		loop_->updateChannel(this);
 	}
 
-	void disableReading()
+	bool readEnabled()
 	{
-		events_ &= ~EPOLLIN;
+		return events_ & EPOLLIN;
 	}
 
-	void disableWriting()
+	bool writeEnabled()
 	{
-		events_ &= ~EPOLLOUT;
+		return events_ & EPOLLOUT;
 	}
 
 	uint32_t events() {return events_;}

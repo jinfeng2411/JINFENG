@@ -13,16 +13,34 @@ class Channel;
 
 class TcpConnection: public std::enable_shared_from_this<TcpConnection>{
 public:
+	enum StateE {
+                kConnecting,
+                kConnected
+        };
+
 	typedef std::shared_ptr<TcpConnection> ptr;
 	typedef std::function<void(const TcpConnection::ptr&)> ConnectionCallback;
 	typedef std::function<void(const TcpConnection::ptr&)> MessageCallback;
+	typedef std::function<void(const TcpConnection::ptr&)> CloseCallback;
 
-	TcpConnection(EventLoop* loop, int connfd, IPv4Address& localAddr, IPv4Address& peerAddr);
+	TcpConnection(EventLoop* loop, std::string name, int connfd, IPv4Address& localAddr, IPv4Address& peerAddr);
 	~TcpConnection();
+
+	std::string name() {return name_;}
 
 	void setMessageCallback(const MessageCallback& cb)
 	{
 		messageCallback_ = cb;
+	}
+
+	void setConnectionCallback(const ConnectionCallback& cb)
+	{
+		connectionCallback_ = cb;
+	}
+
+	void setCloseCallback(const CloseCallback& cb)
+	{
+		closeCallback_ = cb;
 	}
 
 	Buffer& inputBuffer()
@@ -39,15 +57,31 @@ public:
 	{
 		return peerAddr_;
 	}
+
+	void send(const std::string& message);
+
+
+	void connectEstablished();
 private:
+	//读入 inputBuffer_, 再调用相应的回调
 	void handleRead();
 
-private:
-	enum StateE {
-		kConnecting,
-		kConnected
-	};
+	//
+	void handleClose();
 
+	//
+	void handleError();
+
+	//写入 outputBuffer_
+	void handleWrite();
+
+
+	void setState(StateE state)
+	{
+		state_ = state;
+	}	
+
+private:
 	std::string name_;
 	StateE state_;
 
@@ -61,6 +95,7 @@ private:
 
 	ConnectionCallback connectionCallback_;
 	MessageCallback messageCallback_;
+	CloseCallback closeCallback_;
 };
 
 

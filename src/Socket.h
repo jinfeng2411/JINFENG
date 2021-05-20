@@ -34,7 +34,7 @@ public:
 
 	void listen()
 	{
-		int ret = ::listen(sockfd_, 128);
+		int ret = ::listen(sockfd_, 20);
 		assert(ret>=0);
 	}
 
@@ -46,6 +46,15 @@ public:
 		assert(connfd!=-1);
 		peerAddr.setAddr(peer);
 		return connfd;
+	}
+
+	int connect(IPv4Address& servAddr)
+	{
+		struct sockaddr_in& addr = servAddr.getAddr();
+		socklen_t len = sizeof(addr);
+		int ret = ::connect(sockfd_, (struct sockaddr*)&addr, sizeof(addr));
+		assert(ret==0);
+		return ret;
 	}
 
 	int fd() {return sockfd_;}

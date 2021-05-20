@@ -40,7 +40,7 @@ public:
 		return ntohs(addr_.sin_port);
 	}
 
-	const struct sockaddr_in& getAddr()
+	struct sockaddr_in& getAddr()
 	{
 		return addr_;
 	}

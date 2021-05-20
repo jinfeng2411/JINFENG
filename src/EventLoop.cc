@@ -13,7 +13,9 @@ EventLoop::EventLoop()
 	wakeupChannel_(new Channel(this, wakeupFd_)),
 	timers_(new TimerQueue(this))
 {
-
+	LOG_TRACE<<"starting wakeup listening->";
+	wakeupChannel_->setReadCallback([this]{handleRead();});
+	wakeupChannel_->enableReading(true);
 }
 
 EventLoop::~EventLoop()
@@ -56,8 +58,6 @@ void EventLoop::runEvery(double intervalS, Task task)
 	timers_->addTimer(t);
 }
 
-
-
 void EventLoop::loop()
 {
 	LOG_TRACE<<"begin EventLoop::loop";
@@ -65,6 +65,14 @@ void EventLoop::loop()
 	{
 		poller_->loop_once();
 	}
+}
+
+void EventLoop::handleRead()
+{
+	uint64_t val;
+	ssize_t ret = ::read(wakeupFd_, &val, sizeof(val));
+	assert(ret!=-1);
+	LOG_TRACE<<"wake up from loop";
 }
 
 

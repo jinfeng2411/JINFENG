@@ -30,6 +30,9 @@ public:
 	void loop();
 
 private:
+	//用来处理 wakeupChannel_ 的读事件
+	void handleRead();
+
 	pid_t threadId_;
 	std::unique_ptr<EPoller> poller_;
 	int wakeupFd_;  //唤醒(eventfd)

@@ -20,20 +20,21 @@ Channel::~Channel()
 	{
 		LOG_TRACE<<"remove Channel, fd="<<fd_;
 		loop_->removeChannel(this);
-		::close(fd_);
-		fd_ = -1;
 	}
 }
 
 void Channel::handleEvent()
 {
-	if((revents_ & EPOLLIN) && (revents_ & EPOLLRDHUP))
+
+	LOG_TRACE<<"Channel::handleEvent";
+	if(revents_ & EPOLLRDHUP)
 	{
-		LOG_TRACE<<"detected close event on fd:"<<fd_;
-		if(closeCallback_)
+		LOG_TRACE<<"EPOLLRDHUP(peer close the connection) on fd:"<<fd_;
+		if(closeCallback_){
 			closeCallback_();
+		}
 	}
-	if(revents_ & EPOLLIN)
+	else if(revents_ & EPOLLIN)
 	{
 		LOG_TRACE<<"detected read event on fd:"<<fd_;
 		if(readCallback_)
@@ -46,5 +47,6 @@ void Channel::handleEvent()
 			writeCallback_();
 	}	
 }
+
 
 };

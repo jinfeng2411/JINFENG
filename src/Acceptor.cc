@@ -1,6 +1,7 @@
 #include "Acceptor.h"
 #include "EventLoop.h"
 #include "Channel.h"
+#include "Logging.h"
 
 namespace JINFENG{
 
@@ -24,7 +25,7 @@ void Acceptor::listen()
 {
 	acceptSocket_->listen();
 	acceptChannel_->setReadCallback(std::bind(&Acceptor::handleRead, this));
-	acceptChannel_->enableReading();
+	acceptChannel_->enableReading(true);
 }
 
 void Acceptor::handleRead()

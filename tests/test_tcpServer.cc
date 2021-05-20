@@ -30,13 +30,15 @@ void testSocket()
 
 void connectionCallback(const JINFENG::TcpConnection::ptr& ptr)
 {
-
+	ptr->send("hello from server");
 }
 
 void messageCallback(const JINFENG::TcpConnection::ptr& ptr)
 {
 	std::string msg = ptr->inputBuffer().retrieveAllAsString();
 	LOG_TRACE<<"receive message from "<<ptr->peerAddr().ip()<<":"<<ptr->peerAddr().port()<<" "<<msg;
+//	msg = msg + "server reply";
+//	ptr->send(msg);
 }
 
 
@@ -44,7 +46,7 @@ void testTcpServer()
 {
 	JINFENG::EventLoop* loop = new JINFENG::EventLoop();
 	JINFENG::IPv4Address servaddr("127.0.0.1", 9999);
-	JINFENG::TcpServer server(loop, servaddr);
+	JINFENG::TcpServer server(loop, servaddr, 3);
 	server.setMessageCallback(messageCallback);
 	server.setConnectionCallback(connectionCallback);
 	server.start();

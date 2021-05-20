@@ -14,14 +14,14 @@ class EventLoop;
 class Channel;
 class TcpConnection;
 class Acceptor;
+class EventLoopThreadPool;
 
 class TcpServer{
 public:
 	typedef TcpConnection::ptr TcpConnectionPtr;
 	typedef TcpConnection::MessageCallback MessageCallback;
 	typedef TcpConnection::ConnectionCallback ConnectionCallback;
-
-	TcpServer(EventLoop* loop, const IPv4Address& addr, std::string name="jinfeng");
+	TcpServer(EventLoop* loop, const IPv4Address& addr, int numIOThreads=0, std::string name="jinfeng-tcpServer");
 	~TcpServer();
 
 	void start();
@@ -35,8 +35,11 @@ public:
 	{
 		connectionCallback_ = cb;
 	}
+	
 private:
 	void newConnection(int sockfd, const IPv4Address& peerAddr);
+
+	void removeConnection(const TcpConnectionPtr&);
 private:
 	typedef std::map<std::string, TcpConnectionPtr> ConnMap;
 	EventLoop* loop_;
@@ -47,6 +50,7 @@ private:
 	ConnectionCallback connectionCallback_;
 	ConnMap connections_;
 	int count_;
+	std::unique_ptr<EventLoopThreadPool> eventLoopThreadPool_;
 };
 
 

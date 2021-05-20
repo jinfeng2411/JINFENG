@@ -25,6 +25,9 @@ void EPoller::addChannel(Channel* channel)
 	epoll_event event;
 	bzero(&event, sizeof(event));
 	event.events = channel->events();
+	event.events |= EPOLLET;
+	event.events |= EPOLLRDHUP;
+	event.events |= EPOLLHUP;
 	event.data.fd = channel->fd();
 	event.data.ptr = channel;
 	int ret = epoll_ctl(epfd_, EPOLL_CTL_ADD, channel->fd(), &event);
@@ -52,6 +55,9 @@ void EPoller::updateChannel(Channel* channel)
 		struct epoll_event event;
 		bzero(&event, sizeof(event));
 		event.events = channel->events();
+		event.events |= EPOLLET;
+		event.events |= EPOLLRDHUP;
+		event.events |= EPOLLHUP;
 		event.data.fd = channel->fd();
 		event.data.ptr = channel;
 		int ret = epoll_ctl(epfd_, EPOLL_CTL_MOD, channel->fd(), &event);
@@ -68,7 +74,7 @@ void EPoller::loop_once()
 	assert(lastActive_>=0);
 	for(int i=0; i<lastActive_; ++i)
 	{
-		Channel* channel = (Channel*)(activeEvents_[i].data.ptr);
+		Channel* channel = (Channel*)activeEvents_[i].data.ptr;
 		int events = activeEvents_[i].events;
 		channel->setRevents(events);
 		channel->handleEvent();

@@ -13,8 +13,9 @@ TimerQueue::TimerQueue(EventLoop* loop):
 	channel_(new Channel(loop_, timerfd_))
 {
 	assert(timerfd_!=-1);
-	channel_->setReadCallback(std::bind(&TimerQueue::handleRead, this));
-	channel_->enableReading();
+	LOG_TRACE<<"starting timerQueue listening->";
+	channel_->setReadCallback([this]{handleRead();});
+	channel_->enableReading(true);
 }
 
 TimerQueue::~TimerQueue(){
