@@ -10,6 +10,13 @@ include_directories(src)
 
 find_library(PTHREAD pthread)
 
+find_package(Protobuf REQUIRED)
+if(PROTOBUF_FOUND)
+	message("protobuf found")
+else()
+	message(FATAL_ERROR "cannot find Protobuf")
+endif()
+
 add_executable(test_logging tests/test_logging.cc ${SOURCE})
 add_executable(test_thread tests/test_thread.cc ${SOURCE})
 add_executable(test_threadPool tests/test_threadPool.cc ${SOURCE})

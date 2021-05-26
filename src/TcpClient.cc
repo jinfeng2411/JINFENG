@@ -39,6 +39,7 @@ void TcpClient::newConnection(int fd)
 				servaddr_)	
 	);
 	connection_->setMessageCallback(messageCallback_);
+	connectionCallback_(connection_);
 }
 
 

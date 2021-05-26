@@ -14,12 +14,18 @@ class EventLoop;
 class TcpClient{
 public:
 	typedef TcpConnection::MessageCallback MessageCallback;
+	typedef TcpConnection::ConnectionCallback ConnectionCallback;
 	TcpClient(EventLoop* loop, const IPv4Address& servaddr);
 	~TcpClient();
 
 	void setMessageCallback(const MessageCallback& cb)
 	{
 		messageCallback_ = cb;
+	}
+
+	void setConnectionCallback(const ConnectionCallback& cb)
+	{
+		connectionCallback_ = cb;
 	}
 
 	void send(const std::string& msg)
@@ -48,7 +54,7 @@ private:
 	std::unique_ptr<Connector> connector_;
 	std::shared_ptr<TcpConnection> connection_;
 	MessageCallback messageCallback_;
-
+	ConnectionCallback connectionCallback_;
 };
 
 
