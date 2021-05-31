@@ -5,6 +5,7 @@
 #include "InetAddress.h"
 #include "Socket.h"
 #include "Buffer.h"
+#include "JINFENG-impl.h"
 
 namespace JINFENG{
 
@@ -60,8 +61,13 @@ public:
 
 	void send(const std::string& message);
 
-
 	void connectEstablished();
+
+	template<class T>
+	T& context()
+	{
+		return ctx_.context<T>();
+	}
 private:
 	//读入 inputBuffer_, 再调用相应的回调
 	void handleRead();
@@ -86,12 +92,14 @@ private:
 	StateE state_;
 
 	EventLoop* loop_;
-	std::unique_ptr<Socket> socket_;
-	IPv4Address localAddr_;
-	IPv4Address peerAddr_;
-	std::unique_ptr<Channel> channel_;
-	Buffer inputBuffer_;
-	Buffer outputBuffer_;
+	std::unique_ptr<Socket> socket_;  
+	IPv4Address localAddr_;  //本端地址
+	IPv4Address peerAddr_; //对端地址
+	std::unique_ptr<Channel> channel_; //该连接的Channel
+	Buffer inputBuffer_;  //输入缓冲
+	Buffer outputBuffer_;  //输出缓冲
+
+	AutoContext ctx_;  //将来可以扩展
 
 	ConnectionCallback connectionCallback_;
 	MessageCallback messageCallback_;

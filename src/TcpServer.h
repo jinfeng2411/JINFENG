@@ -35,6 +35,12 @@ public:
 	{
 		connectionCallback_ = cb;
 	}
+
+	std::string name() const{return name_;}
+
+	const std::string ip() const{return servAddr_.ip();}
+
+	uint16_t port() const {return servAddr_.port();}
 	
 private:
 	void newConnection(int sockfd, const IPv4Address& peerAddr);
