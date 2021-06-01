@@ -1,0 +1,9 @@
+server1:
+        name: jinfeng-server
+        port: 9999
+        ip: 127.0.0.1
+server2:
+        name: yulu-server
+        port: 8888
+        ip: 0.0.0.0
+
